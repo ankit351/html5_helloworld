@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form/get.html</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>form/get.html</title>
 </head>
 <body>
-    <!-- userId, userPw => get.jps -->
-    <form action="get.jsp" method="GET">
-    	
-사원번호: <input type="text" name="employeeId"><br>
-연락처: <input type="text" name="phone"><br>
-급여: <input type="number" name="salary"><br>
-        <!--  <input type="text" name="userId"><br>-->
-        <!--  <input type="text" name="userPw"><br>-->
-        <input type="submit" value="전송">
-        <input type="reset" value="다시작성">
-    </form>
-    
+	<!-- userId, userPw => get.jps -->
+	<form action="get.jsp" method="GET">
+
+		사원번호: <input type="text" name="employeeId"><br> 연락처: <input
+			type="text" name="phone"><br> 급여: <input type="number"
+			name="salary"><br>
+		<!--  <input type="text" name="userId"><br>-->
+		<!--  <input type="text" name="userPw"><br>-->
+			<input type="submit" value="전송"> <input type="reset" value="다시작성">
+	</form>
+
+	<h3>링크 -> 입력처리.</h3>
+	<a href="get.jsp?employeeId=206&phone=3333-4444&salary=25000">입력처리.</a>
+
+
+
 </body>
 </html>
