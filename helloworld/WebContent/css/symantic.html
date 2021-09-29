@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/symantic.html</title>
+
+    <style>
+        header>div {
+            display: inline-block;
+            text-align: center;
+            border: 2px solid;
+            border-radius: 5px;
+            background-color: rgb(252, 240, 220);
+            width: 60%;
+            height: 80px;
+            margin: 1%;
+        }
+
+        div.bodys {
+            text-align: center;
+
+            background-color: white;
+            width: 63%;
+            height: 250px;
+            z-index: 0;
+        }
+
+        nav {
+            float: left;
+            background-color: greenyellow;
+            border: 2px solid;
+            border-radius: 5px;
+            margin: 1% 1% 1% 2%;
+            width: 23%;
+            height: 240px;
+
+
+            z-index: 1;
+        }
+
+
+        section {
+            background-color: greenyellow;
+            display: block;
+            border: 2px solid;
+            border-radius: 5px;
+            float: left;
+            width: 42%;
+            height: 240px;
+            margin: 1%;
+            z-index: 1;
+        }
+
+        aside {
+            float: left;
+
+            background-color: greenyellow;
+            border: 2px solid;
+            border-radius: 5px;
+            margin: 1%;
+            width: 23%;
+            height: 240px;
+
+            z-index: 1;
+        }
+
+        section>header,
+        article,
+        footer {
+            display: inline-block;
+            text-align: center;
+            border: 2px solid;
+            border-radius: 5px;
+            background-color: yellowgreen;
+            margin: 5px;
+            display: block;
+        }
+
+        section>header {
+            height: 20%;
+        }
+
+        section>article {
+            height: 35%;
+        }
+
+        section>footer {
+            height: 20%
+        }
+
+        footer.bottomfot {
+            display: inline-block;
+            text-align: center;
+            border: 2px solid;
+            border-radius: 5px;
+            background-color: rgb(255, 200, 98);
+            width: 60%;
+            height: 80px;
+            margin: 1%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>&lt;header&gt;</div>
+    </header>
+    <div class="bodys">
+        <nav>&lt;nav&gt;</nav>
+        <section>&lt;section&gt;
+            <header>&lt;header&gt;</header>
+            <article>&lt;article&gt;</article>
+            <footer>&lt;footer&gt;</footer>
+        </section>
+        <aside>&lt;aside&gt;</aside>
+    </div>
+
+    <footer class="bottomfot">&lt;footer&gt;</footer>
+
+
+</body>
+
+</html>

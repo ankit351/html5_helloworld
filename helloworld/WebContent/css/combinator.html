@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/combinator.html</title>
+
+
+    <style>
+
+        div.parent p{
+            
+            background-color: yellow;
+
+        }
+
+        div.child~p{
+            color: red;
+        }
+
+        div.child+p{
+            font-size: x-large;
+        }
+
+        div.parent > p:first-child{
+            font-size: x-large;
+            color: pink;
+        }
+        
+
+    </style>
+
+
+</head>
+<body>
+    
+        <!-- div    -->
+        <div class="parent">
+            <p>brother</p>
+            <div class="child">
+                <div class="grandchild">
+                    <p class="grand">test</p>
+                </div>
+            </div>
+            <div>sister</div>
+            <p>child</p>
+            <p>child1</p>
+        </div>
+
+
+</body>
+</html>

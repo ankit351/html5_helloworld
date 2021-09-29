@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/pesudo.html</title>
+    <style>
+        a {
+            font-family: 'Courier New', Courier, monospace;
+            display: inline block;
+            width: 200px;
+            font-size: large;
+            border: 2px solid red;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:visited {
+            color: pink
+        }
+
+        a:hover {
+            color: red;
+            background-color: yellow;
+        }
+
+        a:active {
+            color: teal;
+            font-weight: bold;
+        }
+
+        div.d1:hover {
+            background-color: yellow;
+            width: 300px;
+            transition: all 0.5s linear 0.5s;
+        }
+
+        div.d2:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Pesudo Class</h2>
+    <p><a href="http://www.w3.org">Goto W3C Site</a>
+        <a href="https://www.naver.com">Goto Naver WebPage</a>
+    </p>
+    <div class="d1">
+        <h3>가상1 클래스</h3>
+    </div>
+    <div class="d2">
+        <h3>가상2 클래스</h3>
+    </div>
+
+
+
+
+</body>
+
+</html>

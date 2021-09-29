@@ -1,0 +1,61 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var now = new Date();
+        var year = now.getFullYear();
+        var mon = (now.getMonth() + 1) > 9 ? '' + (now.getMonth() + 1) : '0' + (now.getMonth() + 1);
+        var day = (now.getDate()) > 9 ? '' + (now.getDate()) : '0' + (now
+            .getDate());
+        for (var i = 1900; i <= year; i++) {
+            $('#year').append('<option value="' + i + '">' + i + '년</option>');
+        }
+        for (var i = 1; i <= 12; i++) {
+            var mm = i > 9 ? i : "0" + i;
+            $('#month').append('<option value="' + mm + '">' + mm + '월</option>');
+        }
+        for (var i = 1; i <= 31; i++) {
+            var dd = i > 9 ? i : "0" + i;
+            $('#day').append('<option value="' + dd + '">' + dd + '일</option>');
+        }
+        for (var i = 10; i <= 19; i++) {
+            $('#phone').append('<option value="' + 0 + i + '">' + 0 + i + '</option>');
+            $('#sellp').append('<option value="' + 0 + i + '">' + 0 + i + '</option>');
+        }
+        $("#year > option[value=" + year + "]").attr("selected", "true");
+        $("#month > option[value=" + mon + "]").attr("selected", "true");
+        $("#day > option[value=" + day + "]").attr("selected", "true");
+    })
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <tr>
+        <td>휴대전화</td>
+        <td><select name="sellp" id="sellp">
+            </select> <input type="text" name="addr1" size="4"> <input type="text" name="addr1" size="4"></td>
+    </tr>
+    <tr>
+        <td>전화번호</td>
+        <td><select name="phone" id="phone">
+            </select> <input type="text" name="addr1" size="4"> <input type="text" name="addr1" size="4"></td>
+    </tr>
+
+
+    <tr>
+        <td></td>
+        <td><select name="yy" id="year"></select> 
+            <select name="mm" id="month"></select> 
+            <select name="dd" id="day"></select>
+
+        </td>
+</body>
+</html>
