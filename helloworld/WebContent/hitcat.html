@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat</title>
+</head>
+
+<style>
+    #cat {
+        background-image: url('../quit_cat.png');
+        height: 100%;
+        width: 100%;
+    }
+
+    #cat:hover {
+        background-image: url('../quit_cat1.png');
+        transform: rotate(18000deg);
+        transition-duration: 1s;
+        height: [IMAGE_WIDTH_IN_PIXELS]px;
+        width: [IMAGE_HEIGHT_IN_PIXELS]px;
+    }
+
+    /* #cat:hover{
+        transition-delay: 2s;
+        background-image: url('../quit_cat_result.png');
+    } */
+</style>
+
+
+<body>
+    <div id="cat" style="height: 1000px;"></div>
+</body>
+
+</html>

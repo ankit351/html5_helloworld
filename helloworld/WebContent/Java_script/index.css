@@ -1,0 +1,30 @@
+       ul {
+           list-style-type: none;
+       }
+
+       li::before {
+           content: '- ';
+       }
+
+       .name {
+           display: inline-block;
+           width: 80px;
+           background-color: yellow;
+       }
+
+       table>thead>tr:nth-child(1) {
+           background-color: gray;
+           color: yellow;
+       }
+
+       table>tbody>tr:nth-child(2n) {
+           background-color: rgb(228, 227, 227);
+       }
+
+       tr.pass {
+           color: blue;
+       }
+
+       tr.fail {
+           color: red;
+       }
