@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java_script/array.html</title>
+</head>
+
+<body>
+
+    <input type='text' id='inputValue'>
+    <p>test</p>
+    <button id='btn' onclick="addArray()">추가하기</button>
+
+    <button onclick="removeAry()">remove</button>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        const inputAry = [];
+
+        // inputAry[2] = null;
+        // inputAry.splice(3,1);
+
+        function showList() {
+            let ulTag = document.getElementById('list');
+            let tag = '';
+
+            for (let i = 0; i < inputAry.length; i++) {
+                tag += '<li>' + inputAry[i] + '</li>';
+            }
+            ulTag.innerHTML = tag;
+            console.log(inputAry);
+
+            // input.value = '';
+            // input.focus();
+        }
+
+
+
+        function addArray() {
+            let input = document.getElementById('inputValue');
+            console.log(input.value);
+            let iValue = input.value;
+
+            // 배열 추가
+
+            if (!iValue) {
+                alert('값을 입력하세요.');
+                return;
+            }
+
+            // inputAry.push(input.value);
+            // console.log(inputAry);
+            inputAry.unshift(iValue);
+            showList();
+            input.value = '';
+            input.focus();
+            
+            //화면에 추가
+
+        }
+
+        function removeAry() {
+            inputAry.pop();
+            showList();
+        }
+    </script>
+
+
+
+</body>
+
+</html>

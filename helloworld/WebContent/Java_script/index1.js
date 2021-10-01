@@ -23,24 +23,25 @@ function createTable(){
 let tag = '<table border="1"><thead><tr><th>이름</th><th>나이</th><th>점수</th><th>Pass</th></thead>';
 tag += '<tbody>';
 for(let person of persons){
-    if(person.score>=60){
-        tag += '<tr class="pass">';
-    } 
-    else{
-        tag += '<tr class="fail">';
-    }
-    tag += '<tr>';
-    for(let field in person){
-        tag += '<td>'+person[field]+'</td>';
-    }
+    // if(person.score>=60){
+    //     tag += '<tr class="pass">';
+    // } 
+    // else{
+    //     tag += '<tr class="fail">';
+    // }
+    // tag += '<tr>';
+    // for(let field in person){
+    //     tag += '<td>'+person[field]+'</td>';
+    // }
 
-    if(person.score>=60){
-        tag += '<td>pass</td>'
-    }
-    else {
-        tag += '<td>Fail</td>'
-    }
-    tag += '</tr>'
+    // if(person.score>=60){
+    //     tag += '<td>pass</td>'
+    // }
+    // else {
+    //     tag += '<td>Fail</td>'
+    // }
+    // tag += '</tr>'
+    tag += createTr(person);
 }
 
 tag = tag + '</tbody></table>';
@@ -48,7 +49,7 @@ tag = tag + '</tbody></table>';
 document.write(tag);
 }
 
-createTable();
+
 
 
 

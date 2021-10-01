@@ -4,6 +4,7 @@
 
        li::before {
            content: '- ';
+           line-height: 50px;
        }
 
        .name {
@@ -21,10 +22,10 @@
            background-color: rgb(228, 227, 227);
        }
 
-       tr.pass {
+       td.pass {
            color: blue;
        }
 
-       tr.fail {
+       td.fail {
            color: red;
        }
