@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java_script/date.html</title>
+
+    <style>
+        table {
+            text-align: center;
+
+        }
+
+        td {
+            width: 50px;
+        }
+
+        th {
+            background-color: beige;
+        }
+
+        .dates:nth-child(1) {
+            background-color: rgb(170, 245, 30);
+        }
+
+        .dates:nth-last-child(1) {
+            background-color: cornflowerblue;
+        }
+
+        tr:nth-child(3) {
+            background-color: ivory;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <script>
+        let today = new Date(2020,12+2,0+1); // 기본값은 시스템 날짜의 오늘기준 달+1 해줘야지 맞음
+
+        console.log(today);
+        
+        let strday = today.getDay();
+
+        console.log(strday);
+
+        let endday = new Date(2021, 3, 0);
+
+        console.log(endday);
+
+        document.write(today.getFullYear() + '-');
+        document.write(today.getMonth() + 1 + '-');
+        document.write(today.getDate() + '-');
+        document.write(today.getDay() + '<br><br>');
+
+        document.write(`<table border=1><th colspan=7>${today.getMonth()+1}월 달력</th><tr></tr>`);
+
+        document.write('<tr><td>Sun</td><td>Mon</td><td>Tus</td><td>Wed</td><td>Thr</td><td>Fri</td><td>Sat</td></tr>')
+
+        for (let i = 0; i < strday; i++) {
+            document.write('<td></td>');
+        }
+
+        let ebuf;
+
+        for (let i = 1; i < endday.getDate() + 1; i++) {
+            document.write('<td class="dates">' + i + '</td>');
+
+            let buf = strday;
+            let ibuf = i + buf;
+
+            if ((ibuf) % 7 == 0) {
+                document.write('<tr></tr>')
+            }
+            ebuf = ibuf;
+        }
+
+        for (; ebuf % 7 !== 0; ebuf++) {
+            document.write('<td></td>');
+        }
+
+
+        document.write('</table>');
+    </script>
+
+</body>
+
+</html>

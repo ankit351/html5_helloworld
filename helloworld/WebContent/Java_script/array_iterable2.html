@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java_script/array_iterable2.html</title>
+</head>
+
+<body>
+
+    <script>
+        const members = [{
+                name: '최선영',
+                score: 80
+
+            }, {
+                name: '윤희성',
+                score: 85
+
+            }, {
+                name: '김지인',
+                score: 89
+            },
+            {
+                name: '홍길동',
+                score: 50
+            }
+        ];
+
+       yedam1s = members.map(function (obj, idx, ary) {
+            
+            let ok;
+            if (50 < obj.score) {
+                    ok ='pass';
+                } else {
+                    ok ='fail';
+                };
+
+            
+            const yedam1 = {
+                name: obj.name,
+                score: obj.score,
+                pass: ok
+                
+            };
+            return yedam1;
+        });
+
+
+        const yedam1pass = yedam1s.filter(function (boj, idx, ary) {
+            console.log(boj, idx, ary);
+
+            return boj.pass == 'pass';
+        })
+
+
+        document.write('<table border=1><tr><th>이름</th><th>점수</th><th>OK?</th></tr>');
+    
+        yedam1pass.forEach(function(obj, idx, ary) {
+
+            document.write('<tr>');
+                for(let field in obj){
+                    document.write('<td>'+obj[field]+'</td>');
+                }
+                document.write('</tr>');
+            // document.write('<tr><td>'+obj.name+'</td><td>'+obj.score+'</td><td>'+obj.pass+'</td></tr>')
+
+
+        });
+        document.write('</table>')
+
+    </script>
+
+
+</body>
+
+</html>

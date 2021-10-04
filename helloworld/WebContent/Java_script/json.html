@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Java_script_json.html</title>
+    </head>
+
+    <body>
+        <script>
+            let jsonData = `{
+                "employees":[{
+            "firstName": "John", 
+            "lastName": "Doe"
+        }, {
+            "firstName": "Anna", 
+            "lastName": "Smith"
+        }, {
+            "firstName": "Peter", 
+            "lastName": "Jones"
+        }
+      ]
+    }`;
+
+            function clickFnc(e) {
+                let btn = e.target;
+                console.log(btn.parentNode.remove());
+            }
+
+            function mOver(e) {
+                e.target.style.backgroundColor = 'yellow';
+            }
+
+            function mOut(e){
+                e.target.style.backgroundColor = '';
+            }
+
+            let obj = JSON.parse(jsonData); // json => object
+            const employees = obj.employees;
+            //console.log(obj);
+
+            document.write('<ul>');
+
+            employees.forEach(function (obj, idx, ary) {
+                document.write('<li onmouseout="mOut(event)" onmouseover="mOver(event)">' + obj.firstName + '-' + obj.lastName +
+                    '<button onclick="clickFnc(event)">삭제</button>' + '</li>');
+            });
+
+            document.write('</ul>');
+
+
+            console.log(employees);
+
+            // consol.log(obj.employees[0].firstName + ',' + obj.employees[0].lastName);
+        </script>
+
+    </body>
+
+    </html>

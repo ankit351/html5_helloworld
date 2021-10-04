@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java_script/array_iterable.html</title>
+</head>
+
+<body>
+
+    <script>
+        const numbers = [30, 25, 4, 100, 10];
+
+        let sum = 0;
+        numbers.forEach(function (obj, idx, ary) { // 오브젝트[각각의 요소 전부], 인덱스를 가리키는 값(다수가될수있음), 해당 array의 값
+
+            if (idx % 2 == 0)
+                sum = sum + obj;
+        });
+
+        console.log(`합계: ${sum}`);
+
+        const names = ['한동일', '유상우', '정석진', '박준형'];
+        document.write('<ul>');
+        names.forEach(callBackFnc); // JS 에서 사용하는 ()의 의미는 전처리중에 실행되어야하는 함수인지 구분으로 사용된다 
+        document.write('</ul>');
+
+        function callBackFnc(obj){
+        document.write('<li>' + obj + '</li>');
+        }
+
+        const persons = names.map(function (obj, idx, ary){
+            const score = Math.floor(Math.random()*100);
+            const person ={
+                name: obj,
+                score: score
+            };  
+            return person;
+        }); //mapping
+
+        const person40 = persons.filter(function (obj, idx, ary) {
+            return obj.score > 40;
+        }); // filtering
+        
+        console.log(person40)
+    </script>
+
+
+</body>
+
+</html>

@@ -21,6 +21,14 @@
     </ul>
 
     <script>
+
+        const fruits = ['apple', 'banana', 'cherry'];
+        const newFruits = fruits.slice(0,1);
+
+        console.log(newFruits);
+
+
+
         const inputAry = [];
 
         // inputAry[2] = null;
@@ -66,9 +74,30 @@
         }
 
         function removeAry() {
-            inputAry.pop();
+            // inputAry.shift();
+            // inputAry.pop();
+            // value를 읽어와서 동일한 value가 존재한다면 삭제할수있게할때
+            // element의 값을 갖고 오도록하려면
+            // id를 일단 가져와서 조건을 비교한후에 
+
+            // let iv = document.getElementById('inputValue').value;
+            // let iv = document.getElementsByTagName('input')[0].value;
+            let iv = document.querySelector('input[type="text"]').value;
+            
+            for(let i=0; i<inputAry.length;i++){
+                if(iv == inputAry[i]){
+                    inputAry.splice(i, 1);
+                    break;
+                }
+            }
+
+
+
             showList();
         }
+
+
+
     </script>
 
 
