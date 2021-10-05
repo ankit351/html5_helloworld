@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <form action="post.jsp" method="GET">
+        <label for="emp">아이디</label>
+        <input type="text" name="emp" id="emp">
+        <label for="name">이름</label>
+        <input type="text" name="emp" id="name">
+        <input type="submit" value="전송">
+    </form> -->
+
+</head>
+<body>
+
+    <script>
+
+        
+        let frm = document.createElement('form');
+        frm.action = 'post.jsp'
+
+        let lbl = document.createElement('label');
+        lbl.for = 'emp';
+        lbl.textContent = '아이디'
+
+        let inp1 = document.createElement('input');
+
+        let lbl1 = document.createElement('label');
+        lbl1.for = 'emp';
+        lbl1.textContent = 'name'
+
+        let inp = document.createElement('input');
+
+        //inp.attributes('type');
+
+        frm.appendChild(lbl);
+        frm.appendChild(inp);
+        frm.appendChild(lbl1);
+        frm.appendChild(inp1);
+        
+
+        document.body.appendChild(frm);
+
+
+
+    </script>
+
+</body>
+</html>

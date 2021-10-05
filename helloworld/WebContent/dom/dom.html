@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom/dom.html</title>
+</head>
+<body>
+    <h1>다음 사이트 링크.</h1>
+    <a href="https://www.daum.net">daum</a>
+    
+    <script>
+
+        let h1Tag = document.getElementsByTagName('h1');
+        console.log(h1Tag[0].childNodes[0]);
+
+        let bodyTag = document.getElementsByTagName('body');
+        console.log(bodyTag[0].childNodes[3].childNodes[0].nodeValue = '다음');
+
+        let aTag = document.querySelector('a[href]');
+        console.log(aTag.parentNode.childNodes[0].nodeValue = 'hello');
+        aTag.href = "https://www.naver.com";
+
+
+        console.log(this);
+
+    </script>
+
+</body>
+</html>

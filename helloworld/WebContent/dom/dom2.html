@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom/dom2.html</title>
+</head>
+
+<body>
+    <div id="input">
+        이름:<input type="text" id="name" value='홍길동'><br>
+        나이:<input type="number" id="age" value=22><br>
+        점수:<input type="number" id="score" value=88><br>
+        <button id="btn">추가</button>
+    </div>
+
+    <div id="show">
+        <ul>
+                <!-- <li>이름, 나이, 점수</li>-->
+        </ul>
+    </div>
+
+    <script>
+        // event.
+        let btn = document.getElementById('btn');
+        btn.onclick = function () {
+            
+            //입력값을 읽여와서
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value;
+            let score = document.getElementById('score').value;
+
+            // li 태그를 생성한후 내부에 읽어온값과 관계를 생성해주고
+            let liTag = document.createElement('li');
+            let text = document.createTextNode(name + ', '+ age + ', '+score);
+            liTag.appendChild(text);
+
+            let btnTag = document.createElement('button');
+            btnTag.onclick = function () {
+                //console.log(this); // this > button
+                this.parentNode.remove();
+            }
+            
+            text = document.createTextNode('삭제');
+            btnTag.appendChild(text);
+            liTag.appendChild(btnTag);
+            // btnTag.onclick()
+
+            // ul tag를 생성하여 먼저 생성된 li tag와의 관계를 맺어준다
+            let ulTag = document.querySelector('#show>ul');
+            ulTag.appendChild(liTag);
+            
+
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+</body>
+
+</html>

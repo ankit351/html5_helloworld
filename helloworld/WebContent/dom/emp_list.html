@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        div#show {
+            width: 60%;
+            float: left;
+        }
+
+        div#aside {
+            width: 28%;
+            float: left;
+            border: 2px dotted firebrick;
+            padding: 5px;
+        }
+
+        #aside label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        button {
+            display: inline;
+            float: left;
+            width: 100px;
+            margin: 2%;
+            align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="show">
+        <div></div>
+    </div>
+
+    <div id="aside">
+        <div class="id"><label for="empId">ID</label><input type="text" id="empId"></div>
+        <div class="fname"><label for="empId">FName</label><input type="text" id="firstName"></div>
+        <div class="lname"><label for="empId">LName</label><input type="text" id="lastName"></div>
+        <div class="email"><label for="empId">Email</label><input type="text" id="email"></div>
+        <div class="gender"><label for="empId">Gender</label><input type="text" id="gender"></div>
+        <div class="address"><label for="empId">IP</label><input type="text" id="address"></div>
+        <div class="btn"> <button id="btn">변경</button></div>
+        <div class="btn"> <button id="dbtn">삭제</button></div>
+    </div>
+
+
+    <!-- <table border="1">
+        <tr>
+            <th>11111</th>
+            <th>22222</th>
+            <th>333333</th>
+            <th>44444</th>
+            <th>55555</th>
+        </tr>
+        <tr>
+            <td>66666</td>
+            <td>77777</td>
+            <td>88888</td>
+            <td>99999</td>
+            <td>00000</td>
+        </tr> 
+
+
+    </table> -->
+
+
+
+
+    <script>
+
+        let btn = document.getElementById('btn').onclick = function () {
+            let empId = document.getElementById('empId').value;
+            let fname = document.getElementById('firstName').value;
+            let lname = document.getElementById('lastName').value;
+            let eemail = document.getElementById('email').value;
+            let ggender = document.getElementById('gender').value;
+            let aaddress = document.getElementById('address').value;
+            console.log(empId);
+
+            let findTr = document.getElementById(empId);
+            console.log(findTr);
+            
+            findTr.childNodes[1].firstChild.nodeValue = fname;
+            findTr.childNodes[2].firstChild.nodeValue = lname;
+            findTr.childNodes[3].firstChild.nodeValue = eemail;
+            findTr.childNodes[4].firstChild.nodeValue = ggender;
+            findTr.childNodes[5].firstChild.nodeValue = aaddress;
+        }
+
+        let dbtn = document.getElementById('dbtn').onclick = function () {
+            let empId = document.getElementById('empId').value;
+            let findTr = document.getElementById(empId);
+
+            findTr.remove();
+        }
+
+
+
+        let rawData =
+            `[{"id":1,"first_name":"Melany","last_name":"Ridder","email":"mridder0@icq.com","gender":"Polygender","ip_address":"159.117.134.140"},
+{"id":2,"first_name":"Christyna","last_name":"Hannon","email":"channon1@bizjournals.com","gender":"Non-binary","ip_address":"185.196.158.27"},
+{"id":3,"first_name":"Gabriel","last_name":"Kildale","email":"gkildale2@amazon.com","gender":"Bigender","ip_address":"135.75.233.179"},
+{"id":4,"first_name":"Berta","last_name":"Ruben","email":"bruben3@purevolume.com","gender":"Polygender","ip_address":"179.187.146.150"},
+{"id":5,"first_name":"Godfree","last_name":"Kohlerman","email":"gkohlerman4@princeton.edu","gender":"Genderfluid","ip_address":"247.143.160.24"}]`;
+
+        let data = JSON.parse(rawData);
+
+        let tableT, thT, trT, tdT, textT;
+        let divT = document.getElementById("show");
+        tableT = document.createElement('table');
+        tableT.setAttribute('border', '1');
+
+
+        thT = document.createElement('th');
+        trT = document.createElement('tr');
+        tdT = document.createElement('td');
+
+        for (let field in data[0]) {
+            tdT = document.createElement('th')
+            textT = document.createTextNode(field)
+
+            tdT.appendChild(textT);
+            trT.appendChild(tdT);
+            tableT.appendChild(trT);
+            divT.appendChild(tableT);
+        }
+
+
+        
+        for (let field of data) {
+            trT = document.createElement('tr');
+            trT.setAttribute('id', field.id);
+            trT.onmouseover = function () {
+               let empId = this.childNodes[0].firstChild.nodeValue;
+                let fname = this.childNodes[1].firstChild.nodeValue;
+                let lname = this.childNodes[2].firstChild.nodeValue;
+                let gemail = this.childNodes[3].firstChild.nodeValue;
+                let ggender = this.childNodes[4].firstChild.nodeValue;
+                let gaddress = this.childNodes[5].firstChild.nodeValue;
+
+                document.getElementById('empId').value = empId;
+                document.getElementById('firstName').value = fname;
+                document.getElementById('lastName').value = lname;
+                document.getElementById('email').value = gemail;
+                document.getElementById('gender').value = ggender;
+                document.getElementById('address').value = gaddress;
+                
+            }
+
+
+            for (let k in field) {
+                tdT = document.createElement('td');
+                textT = document.createTextNode(field[k]);
+
+                //console.log(data);
+
+                tdT.appendChild(textT);
+                trT.appendChild(tdT);
+                tableT.appendChild(trT);
+                divT.appendChild(tableT);
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

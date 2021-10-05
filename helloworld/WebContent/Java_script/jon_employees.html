@@ -5,48 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java_script/json_emp.html</title>
+    <title>Document</title>
 </head>
 
-<style>
-
-h3{
-    font-size: xx-large;
-    text-align: center;
-}
-
-.row { 
-    width: 80%;
-    
-}
-
-.row>div{
-    width: 120px;
-    display: inline-block;
-}
-
-.row>#id{
-    width: 5%
-}
-
-.row>#first_name{
-    width: 5%
-}
-
-.row>#Last_name{
-    width: 5%
-}
-.row>#email{
-    width: 200px
-}
-.row>#gender{
-    width: 5%
-}
-.row>#ip_address{
-    width: 5%
-}
-
-</style>
 <body>
     <script>
         let rawData = `[{"id":1,"first_name":"Melany","last_name":"Ridder","email":"mridder0@icq.com","gender":"Polygender","ip_address":"159.117.134.140"},
@@ -76,44 +37,18 @@ h3{
         console.log(emp[0].gender);
         console.log(emp[0].ip_address);
 
-        //document.write('<table border=1><tr><th>사원명부</th></tr>');
+        let ids = document.querySelectorAll('.row> .id');
+        //console.log(ids[0].innerHTML) = 'Smith';
+        let firstnames = document.getElementsByClassName('firstName');
+        console.log(firstnames);
 
-        
-        document.write('<h3>사원리스트</h3>')
-
-        for(let i=0;i<emp.length;i++){
-            document.write('<div class="row"><div class="id">'+emp[i].id+'</div>');
-            document.write('<div class="first_name">'+emp[i].first_name+'</div>');
-            document.write('<div class="last_name">'+emp[i].last_name+'</div>');
-            document.write('<div class="email">'+emp[i].email+'</div>');
-            document.write('<div class="gender">'+emp[i].gender+'</div>');
-            document.write('<div class="ip_address">'+emp[i].ip_address+'</div></div>');
-            document.write('<button class="button">'+삭제버튼+'</button>')
-            //document.write('<p></p>')
-        }
-        
-        // emp.forEach(function(obj, idx, ary){
-
-        // });
-
-
-
+        let json = JSON.stringify(emp);
         //console.log(emp);
+
+
+        
+
     </script>
-
-
-    <h3>사원리스트</h3>
-    <div class="row">
-        <div class="id"></div>
-        <div class="firstName"></div>
-        <div class="lastName"></div>
-        <div class="email"></div>
-        <div class="gender"></div>
-        <div class="ipAddr"></div>
-        <div class="button"><button>button</button></div>
-    </div>;
-
-
 
 </body>
 
