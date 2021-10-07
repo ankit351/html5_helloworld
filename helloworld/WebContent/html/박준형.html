@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박준형.html</title>
+    <style>
+
+        #backboard{
+            border:solid;
+            border-color: red;
+        }
+        
+        #m1{
+            margin-left: 5%;
+        }
+
+        div>a{
+            margin-right: 2%;
+        }
+
+        div#top {
+            margin: 1%;
+            border: solid;
+            border-color: gray;
+            background-color: rgb(196, 97, 196);
+            width: 95%;
+            height: 55%;
+            margin: 2%, 2%, 2%, 2%, 2%;
+        }
+
+        div>div {
+            line-height: 60px;
+        }
+
+        div#text1{
+            margin : 1%;
+        }
+
+        div#top>h3 {
+            display: block;
+        }
+
+        div>a {
+            display: inline;
+        }
+
+        nav {
+            margin: 1%;
+            width: 60%;
+            display: inline-block;
+            float: left;
+            border: solid;
+            border-color: gray;
+            margin: 2%, 2%, 2%, 2%;
+
+        }
+
+        nav>div {
+            padding: 2%;
+            width: 95%;
+            background-color: yellow;
+        }
+
+        nav>table {
+
+            padding: 2%;
+            width: 95%;
+            border: solid;
+            border-color: white;
+            text-align: center;
+
+        }
+
+        nav>table>thead {
+            background-color: blue;
+            color: white;
+        }
+
+        nav>table>tbody>tr:nth-child(2n+1) {
+            background-color: azure;
+        }
+
+        nav>table>tbody>tr:nth-child(even) {
+            background-color: rgb(144, 173, 235);
+        }
+
+        aside {
+            background-color: rgb(207, 202, 202);
+            margin : 1%;
+            padding: 2%;
+            border: solid;
+            border-color: gray;
+            width: 27%;
+            display: inline-block;
+            float: left;
+            
+
+        }
+
+        footer {
+            margin: 1%;
+            padding: 5%;
+            width: 85%;
+            display: inline-block;
+            border: solid;
+            border-color: gray;
+            line-height: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id='backboard'>
+
+        <div id='top'>
+            <div>
+                <div id = 'online'>ONLINE SSAFY</div>
+                <a href="" id='m1'>메뉴1</a>
+                <a href="">메뉴2</a>
+                <a href="">메뉴3</a>
+                <a href="">메뉴4</a>
+            </div>
+        </div>
+
+        <nav>
+            <h1>기사 1</h1>
+            <div id='text1'>휘장은 한글 '서울'을 서울의 산, 해, 한강으로 나타내면서 전체적으로는 신명나는 사람
+                의모습을 형상화 한것으로 인간 중심도시를 지향하는 서울을 상징합니다. 자연 - 인
+                간- 도시의 맥락 속에서 녹색 산은 환경사랑, 청색 한강은 역사와 활력, 가운데 해는
+                미래의 비전과 희망을 함축하고, 이 세가지 요소를 붓터치로 자연스럽게 연결하여 서
+                울의 이미지와 사람의 활력을 친근하게 느낄 수 있도록 하였습니다<br><br>
+
+                녹색 산은 환경사랑, 청색 한강은 역사와 활력, 가운데 해는 미래의 비전과 희망을 함
+                축하고, 이 세가지 요소를 붓터치로 자연스럽게 연결하여 서울의 이미지와 사람의 활력을
+                친근하게 느낄 수 있도록 하였습니다.
+            </div>
+
+            <h1>기사 2</h1>
+            <table>
+                <thead>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                </thead>
+
+                <tr>
+                    <td>1</td>
+                    <td>Make Insert date time customizable.</td>
+                    <td>강감찬</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Make date time order reversible for short</td>
+                    <td>장영실</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Add Insert Data/Time commands shortcut</td>
+                    <td>안중근</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Fix regression: no error message when locked</td>
+                    <td>김두한</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Make "confirm Save All" dialog more clear:</td>
+                    <td>계백</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Imporve JSON, PHP, PYTHON, CSS, BANNC and</td>
+                    <td>최무선</td>
+                </tr>
+            </table>
+        </nav>
+
+        <aside>
+            <h2>SIDEBAR</h2>
+            <div>모든 국민은 근로의 으무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다</div>
+
+        </aside>
+
+        <footer>
+            <h2 id='footer'>Footer</h2>
+            <div>이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다.</div>
+        </footer>
+    </div>
+</body>
+
+</html>

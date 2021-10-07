@@ -17,13 +17,13 @@ import co.yedam.common.Employee;
  * Servlet implementation class EmpjsonServlet
  */
 @WebServlet("/empjsonServlet.json")
-public class EmpjsonServlet extends HttpServlet {
+public class empjsonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EmpjsonServlet() {
+    public empjsonServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
